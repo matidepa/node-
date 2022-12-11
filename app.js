@@ -26,12 +26,25 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);
-app.use('./admin/novedades', adminRouter)
+app.use('./admin/novedades', adminRouter);
+
+secured = async(req,res,next) => {
+  try{
+    console.log(req.session.id_usuario);
+    if(req.session.id_usuario){
+      next();
+    } else {
+      res.redirect('/admin/login');
+    }
+  }catch(error){
+    console.log(error);
+  }
+}
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+// app.use(function(req, res, next) {
+//  next(createError(404));
+// });
 
 // error handler
 app.use(function(err, req, res, next) {
