@@ -11,16 +11,9 @@
         <div id="novedades" class="col-md-5 offset-md-2 py-3">
             <h2>Mas vendidas</h2>
             <ul class="lista-novedades">
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="/images/novedades01.png"
-                            alt=""> Cheese Burger Doble</a></li>
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal2"><img
-                            src="/images/novedades01.png" alt=""> Bacon Cheese Burger</a></li>
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal3"><img
-                            src="/images/novedades01.png" alt=""> Cheese Mix Burger</a></li>
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal4"><img
-                            src="/images/novedades01.png" alt=""> Veggie Burger</a></li>
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal5"><img
-                            src="/images/novedades01.png" alt=""> Chicken Burger</a></li>
+                {{#each novedades}}
+                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="/images/novedades01.png">{{titulo}} Cheese Burger Doble</a></li>
+                {{/each}}
             </ul>
         </div>
         <div class="rounded testimonios col-md-5 offset-md-2 py-3">
@@ -68,76 +61,23 @@
             </div>
         </div>
     </div>
+    {{#each novedades}}
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title" id="exampleModalLabel">Cheese Burger doble</h2>
+                    <h2 class="modal-title" id="exampleModalLabel">{{titulo}}</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h3>Ingredientes</h3>
-                    <p>Dos carnes, 4 fetas de cheddar y pan de papa</p>
+                    <h3>{{subtitulo}}</h3>
+                    <p>{{cuerpo}}</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title" id="exampleModalLabel">Bacon Cheese Burger</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h3>Ingredientes</h3>
-                    <p>Dos carnes, 2 fetas de cheddar, bacon y pan de papa</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title" id="exampleModalLabel">Cheese Mix Burger</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h3>Ingredientes</h3>
-                    <p>Dos carnes, 2 fetas de cheddar, provoleta, 2 fetas de queso emmental y pan de papa</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title" id="exampleModalLabel">Veggie Burger</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h3>Ingredientes</h3>
-                    <p>Dos medallones de arbejas/lentejas, 2 fetas de cheddar, tomate, lechuga y pan de papa</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title" id="exampleModalLabel">Chicken Burger </h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h3>Ingredientes</h3>
-                    <p>Dos medallones de pollo, 2 fetas de cheddar, bacon y pan de papa</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    {{/each}}
+    
     <div id="nosotros" class="row align-items-stetch my-3 staff py-4">
         <div class="col-lg-8 offset-lg-2">
             <h2>Nosotros</h2>

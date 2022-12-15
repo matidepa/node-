@@ -5,3 +5,41 @@
         </div>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-7" style="margin-top: -9px ;">
+        <h2>Listado de novedades</h2>
+    </div>
+    <div class="col-5 text-right">
+        <a href="" class="btn btn-success"><i class="fas fa-plus"></i>
+        Nuevo</a>
+    </div>
+</div>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead  class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col" class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each novedades}}
+                    <tr>
+                        <th scope="row">{{id}}</th>
+                        <td>{{titulo}}</td>
+                        <td class="text-center">
+                            <a href="#" class="btn btn-sm btn-secondary">
+                            <i class="fa fa-pencil"></i></a>
+                            <a href="/admin/novedades/eliminar/{{id}}" class="btn btn-sm btn-secondary">
+                            <i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
